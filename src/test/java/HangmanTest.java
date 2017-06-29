@@ -60,4 +60,18 @@ public class HangmanTest {
     int expected = 2;
     assertEquals(expected, newGame.countAppearances(userGuess));
   }
+
+  @Test
+  public void newHangman_CheckHowManyGuessesAreLeft_int() {
+    Hangman newGame = new Hangman();
+    newGame.generateWordToGuess(newGame.getWordArray());
+    String userGuess = "a";
+    newGame.countAppearances(userGuess);
+    String userGuess2 = "b";
+    newGame.countAppearances(userGuess2);
+    String userGuess3 = "c";
+    newGame.countAppearances(userGuess3);
+    int expected = 7;
+    assertEquals(expected, newGame.getGuessesLeft());
+  }
 }

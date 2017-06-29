@@ -40,6 +40,7 @@ public class Hangman {
     return mWinningCount;
   }
 
+
   public String generateWordToGuess(String[] array) {
     Random random = new Random();
     int index = random.nextInt(array.length);
@@ -69,10 +70,12 @@ public class Hangman {
     return mWinningCount;
   }
 
-  public Boolean checkIfWon() {
+  public Boolean checkIfGameOverWin() {
     if (mWinningCount == mAnswer.length()) {
       mGameOver = true;
-    }
+    } 
     return mGameOver;
   }
+
+
 }

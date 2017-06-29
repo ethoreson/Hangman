@@ -19,14 +19,18 @@ public class App {
       if (player.isLetterInWord(userGuess)) {
         System.out.println("Correct!");
         player.countAppearances(userGuess);
-        // check if game has been won
-        if (player.checkIfWon()) {
+        if (player.checkIfGameOver()) {
           System.out.println("YOU WIN!");
           player.setGameOver(true);
         }
       } else {
         System.out.println("No!");
-        // check if game has been lost
+        System.out.println(player.getGuessesLeft() + " guesses remaining");
+        player.countAppearances(userGuess);
+        if (player.getGuessesLeft() == 0) {
+          System.out.println("YOU LOSE!");
+          player.setGameOver(true);
+        }
       }
 
     }
